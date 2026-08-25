@@ -3,183 +3,197 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Awais Haider | Developer</title>
+    <title>Awais Haider | Full-Stack Architect</title>
     
-    <!-- Google Fonts: Outfit (Modern & Readable) -->
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700;900&display=swap" rel="stylesheet">
-    <!-- Font Awesome -->
+    <!-- Google Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Tailwind for Layout -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- GSAP for Smooth Entry -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
     <style>
         body {
-            background-color: #0a0a0a;
+            background-color: #050505;
             color: #ffffff;
-            font-family: 'Outfit', sans-serif;
-            scroll-behavior: smooth;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
         }
 
-        /* Video Masking Styling */
-        .video-mask {
-            width: 300px;
-            height: 300px;
-            border-radius: 50%; /* Circle Mask */
-            overflow: hidden;
-            border: 4px solid #ff0000;
-            box-shadow: 0 0 50px rgba(255, 0, 0, 0.3);
+        /* Video Masking (Top) */
+        .mask-container {
+            width: 280px;
+            height: 280px;
+            clip-path: circle(50% at 50% 50%);
+            border: 3px solid #ff0000;
             margin: 0 auto;
             position: relative;
+            box-shadow: 0 0 40px rgba(255, 0, 0, 0.4);
         }
 
-        #sharingan-video {
+        #hero-video {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
 
-        .gradient-text {
-            background: linear-gradient(to right, #ffffff, #ff0000);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .glass {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
         }
 
-        .glass-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            transition: 0.3s;
+        .red-gradient {
+            background: linear-gradient(135deg, #ff0000, #990000);
         }
 
-        .glass-card:hover {
-            border-color: #ff0000;
-            background: rgba(255, 0, 0, 0.02);
-        }
+        .text-reveal { opacity: 0; transform: translateY(30px); }
 
-        /* Simple & Clean Navigation */
-        nav {
-            padding: 20px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 100;
-            background: rgba(10, 10, 10, 0.8);
-            backdrop-filter: blur(10px);
-        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-thumb { background: #ff0000; border-radius: 10px; }
     </style>
 </head>
 <body>
 
-    <nav>
-        <div class="text-2xl font-black tracking-tighter">AH<span class="text-red-600">.</span></div>
-        <a href="#contact" class="text-sm font-bold border border-white/20 px-5 py-2 rounded-full hover:bg-white hover:text-black transition">Let's Talk</a>
-    </nav>
-
     <!-- HERO SECTION -->
-    <section class="pt-32 pb-20 px-6 text-center">
-        <!-- Masked Video Top Par -->
-        <div class="video-mask mb-10">
-            <video autoplay muted loop playsinline id="sharingan-video">
+    <section class="min-h-screen flex flex-col justify-center items-center text-center px-6 pt-20">
+        <div class="mask-container mb-8">
+            <video autoplay muted loop playsinline id="hero-video">
                 <source src="sharingan.mp4" type="video/mp4">
             </video>
         </div>
+        
+        <h1 class="text-5xl md:text-8xl font-extrabold tracking-tighter mb-4 text-reveal">
+            AWAIS <span class="text-red-600">HAIDER</span>
+        </h1>
+        <p class="text-gray-400 text-lg md:text-xl max-w-2xl text-reveal">
+            Creative Developer & Software Architect based in <span class="text-white border-b border-red-600">Chakwal, Pakistan</span>. I turn complex problems into elegant digital solutions.
+        </p>
 
-        <div class="max-w-4xl mx-auto">
-            <h1 class="text-6xl md:text-8xl font-black mb-4 tracking-tighter reveal">
-                AWAIS <span class="gradient-text">HAIDER</span>
-            </h1>
-            <p class="text-xl md:text-2xl text-gray-400 mb-8 reveal">
-                Building the future of web with <span class="text-white border-b-2 border-red-600">Code & Logic</span>
-            </p>
-            <img src="wasi.png" alt="Awais" class="w-24 h-24 mx-auto rounded-2xl border-2 border-red-600 mb-6 rotate-3 shadow-xl">
+        <div class="mt-10 flex gap-4 text-reveal">
+            <a href="#projects" class="red-gradient px-8 py-3 rounded-full font-bold hover:scale-105 transition">View My Work</a>
+            <a href="#contact" class="border border-white/20 px-8 py-3 rounded-full font-bold hover:bg-white hover:text-black transition">Let's Talk</a>
         </div>
     </section>
 
-    <!-- INFO SECTION -->
-    <section class="py-20 px-6 max-w-5xl mx-auto grid md:grid-cols-2 gap-10">
-        <div class="glass-card p-10 rounded-3xl reveal">
-            <h2 class="text-3xl font-bold mb-6 text-red-600">Expertise</h2>
-            <div class="space-y-4">
-                <div class="flex justify-between items-center border-b border-white/10 pb-2">
-                    <span class="text-lg">Frontend (React/Next)</span>
-                    <i class="fab fa-react text-blue-400"></i>
-                </div>
-                <div class="flex justify-between items-center border-b border-white/10 pb-2">
-                    <span class="text-lg">Backend (Node.js)</span>
-                    <i class="fab fa-node-js text-green-500"></i>
-                </div>
-                <div class="flex justify-between items-center border-b border-white/10 pb-2">
-                    <span class="text-lg">Modern Styling (Tailwind)</span>
-                    <i class="fab fa-css3 text-blue-500"></i>
-                </div>
-            </div>
+    <!-- ABOUT & DP SECTION -->
+    <section class="py-24 px-6 max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+        <div class="text-reveal">
+            <img src="wasi.png" class="w-full max-w-md rounded-[40px] border-2 border-red-600/30 rotate-2 shadow-2xl">
         </div>
-
-        <div class="glass-card p-10 rounded-3xl reveal">
-            <h2 class="text-3xl font-bold mb-6 text-red-600">Bio</h2>
-            <p class="text-gray-300 leading-relaxed">
-                I am a passionate developer based in <b>Chakral, Chakwal</b>. I specialize in creating high-quality, high-performance websites that don't just look good but work perfectly. 
+        <div class="text-reveal">
+            <h2 class="text-4xl font-bold mb-6 italic">"Precision in every pixel, <br>Power in every line of code."</h2>
+            <p class="text-gray-400 text-lg leading-relaxed mb-6">
+                Assalam-o-Alaikum! I am Awais, a developer who believes in the power of innovation. Whether it's a small landing page or a complex web application, I bring 100% commitment to the table.
             </p>
-            <div class="mt-6 flex items-center gap-3">
-                <div class="w-3 h-3 bg-red-600 rounded-full animate-pulse"></div>
-                <span class="text-sm uppercase tracking-widest text-gray-400">Available for Projects</span>
+            <div class="grid grid-cols-2 gap-6">
+                <div>
+                    <h4 class="text-red-600 font-bold uppercase text-xs tracking-widest mb-2">Location</h4>
+                    <p>Chakral, Chakwal</p>
+                </div>
+                <div>
+                    <h4 class="text-red-600 font-bold uppercase text-xs tracking-widest mb-2">Experience</h4>
+                    <p>3+ Years Coding</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- CONTACT SECTION (Clean & Big) -->
-    <section id="contact" class="py-20 px-6 text-center">
-        <div class="max-w-3xl mx-auto glass-card p-12 rounded-[40px] border-2 border-red-600/20">
-            <h2 class="text-4xl md:text-6xl font-bold mb-8">Ready to <span class="text-red-600">Sync?</span></h2>
+    <!-- SERVICES SECTION -->
+    <section class="py-24 px-6 bg-[#080808]">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold mb-16 text-center text-reveal">SPECIALIZED <span class="text-red-600">SERVICES</span></h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass p-10 text-reveal hover:border-red-600 transition">
+                    <i class="fas fa-laptop-code text-red-600 text-4xl mb-6"></i>
+                    <h3 class="text-2xl font-bold mb-4">Web Development</h3>
+                    <p class="text-gray-400">High-end React, Next.js, and Tailwind CSS websites that are fast and secure.</p>
+                </div>
+                <div class="glass p-10 text-reveal hover:border-red-600 transition">
+                    <i class="fas fa-mobile-screen text-red-600 text-4xl mb-6"></i>
+                    <h3 class="text-2xl font-bold mb-4">App Design</h3>
+                    <p class="text-gray-400">User-centric mobile app designs that provide a seamless experience.</p>
+                </div>
+                <div class="glass p-10 text-reveal hover:border-red-600 transition">
+                    <i class="fas fa-server text-red-600 text-4xl mb-6"></i>
+                    <h3 class="text-2xl font-bold mb-4">Backend Logic</h3>
+                    <p class="text-gray-400">Robust Node.js and MongoDB database management for your data security.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS SECTION (Bento Style) -->
+    <section class="py-24 px-6 max-w-6xl mx-auto">
+        <h2 class="text-4xl font-bold mb-16 text-reveal">TECH <span class="text-red-600">STACK</span></h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-reveal">
+            <div class="glass p-6 flex items-center gap-4"><i class="fab fa-html5 text-orange-500 text-2xl"></i> HTML5</div>
+            <div class="glass p-6 flex items-center gap-4"><i class="fab fa-css3-alt text-blue-500 text-2xl"></i> CSS3</div>
+            <div class="glass p-6 flex items-center gap-4"><i class="fab fa-js text-yellow-400 text-2xl"></i> JavaScript</div>
+            <div class="glass p-6 flex items-center gap-4"><i class="fab fa-react text-blue-300 text-2xl"></i> React.js</div>
+            <div class="glass p-6 flex items-center gap-4"><i class="fab fa-node text-green-500 text-2xl"></i> Node.js</div>
+            <div class="glass p-6 flex items-center gap-4"><i class="fas fa-wind text-cyan-400 text-2xl"></i> Tailwind</div>
+            <div class="glass p-6 flex items-center gap-4"><i class="fab fa-git-alt text-red-500 text-2xl"></i> Git</div>
+            <div class="glass p-6 flex items-center gap-4"><i class="fas fa-database text-green-400 text-2xl"></i> MongoDB</div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="py-24 px-6">
+        <div class="max-w-4xl mx-auto glass p-12 md:p-20 text-center border-t-4 border-red-600 text-reveal">
+            <h2 class="text-5xl font-bold mb-10">WORK WITH <span class="text-red-600">ME</span></h2>
             
-            <div class="space-y-6 text-xl md:text-2xl font-bold">
-                <p class="hover:text-red-600 transition tracking-tight">
-                    <i class="fas fa-envelope mr-3 text-red-600"></i> wasicenter120@gmail.com
-                </p>
-                <p class="hover:text-red-600 transition tracking-tight">
-                    <i class="fas fa-phone mr-3 text-red-600"></i> 03342002756
-                </p>
-                <p class="text-gray-500 text-lg">
-                    <i class="fas fa-map-marker-alt mr-3 text-red-600"></i> Chakral, Chakwal, Pakistan
-                </p>
+            <div class="grid md:grid-cols-2 gap-10 text-left mb-12">
+                <div class="space-y-6">
+                    <div>
+                        <h4 class="text-red-600 font-bold uppercase text-xs tracking-widest">Email</h4>
+                        <p class="text-xl md:text-2xl font-bold">wasicenter120@gmail.com</p>
+                    </div>
+                    <div>
+                        <h4 class="text-red-600 font-bold uppercase text-xs tracking-widest">Phone</h4>
+                        <p class="text-xl md:text-2xl font-bold">03342002756</p>
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <div>
+                        <h4 class="text-red-600 font-bold uppercase text-xs tracking-widest">Address</h4>
+                        <p class="text-xl md:text-2xl font-bold">Chakral, Chakwal, Pakistan</p>
+                    </div>
+                    <div class="flex gap-4">
+                        <a href="https://wa.me/923342002756" class="w-12 h-12 glass flex items-center justify-center rounded-full text-green-500 text-xl hover:bg-green-500 hover:text-black transition"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" class="w-12 h-12 glass flex items-center justify-center rounded-full text-blue-400 text-xl hover:bg-blue-400 hover:text-black transition"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
             </div>
 
-            <div class="mt-12">
-                <a href="https://wa.me/923342002756" class="bg-red-600 text-black px-12 py-5 rounded-full font-black uppercase tracking-tighter hover:scale-105 transition active:scale-95">
-                    Start a Conversation
-                </a>
-            </div>
+            <a href="mailto:wasicenter120@gmail.com" class="inline-block red-gradient px-12 py-5 rounded-2xl font-black uppercase text-sm tracking-widest hover:scale-105 transition active:scale-95 shadow-[0_10px_40px_rgba(255,0,0,0.3)]">
+                Kickstart Project
+            </a>
         </div>
     </section>
 
-    <footer class="py-10 text-center opacity-40 text-xs tracking-widest uppercase">
-        &copy; 2024 Awais Haider — System Architect
+    <footer class="py-10 text-center text-gray-600 text-xs tracking-[5px] uppercase">
+        Awais Haider &copy; 2024 • Built with Code & Passion
     </footer>
 
     <script>
-        // GSAP Animations on Load
-        window.onload = () => {
-            gsap.from(".reveal", {
-                y: 50,
-                opacity: 0,
+        // GSAP Scroll Animations
+        gsap.registerPlugin(ScrollTrigger);
+
+        document.querySelectorAll('.text-reveal').forEach((el) => {
+            gsap.to(el, {
+                scrollTrigger: {
+                    trigger: el,
+                    start: "top 85%",
+                },
+                opacity: 1,
+                y: 0,
                 duration: 1,
-                stagger: 0.2,
                 ease: "power4.out"
             });
-
-            // Smooth appear for video mask
-            gsap.from(".video-mask", {
-                scale: 0.5,
-                opacity: 0,
-                duration: 1.5,
-                ease: "expo.out"
-            });
-        };
+        });
     </script>
 </body>
 </html>
