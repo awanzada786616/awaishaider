@@ -3,209 +3,183 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Awais Haider | Elite System Architect</title>
+    <title>Awais Haider | Developer</title>
     
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.min.js"></script>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <!-- Google Fonts: Outfit (Modern & Readable) -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Tailwind for Layout -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- GSAP for Smooth Entry -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 
     <style>
-        :root { --red: #ff0000; --dark: #050505; --glass: rgba(255, 255, 255, 0.03); }
-        body { background: var(--dark); color: white; font-family: 'Inter', sans-serif; }
-        .sync { font-family: 'Syncopate', sans-serif; }
-        
-        /* Smooth Scroll */
-        html.lenis { height: auto; }
-        .lenis.lenis-smooth { scroll-behavior: auto; }
-        
-        /* Video Fix */
-        .video-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; z-index: -1; opacity: 0.4; filter: contrast(120%); }
-        #bg-video { width: 100%; height: 100%; object-fit: cover; }
+        body {
+            background-color: #0a0a0a;
+            color: #ffffff;
+            font-family: 'Outfit', sans-serif;
+            scroll-behavior: smooth;
+        }
 
-        /* Custom UI */
-        .glass { background: var(--glass); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.1); }
-        .red-shadow { box-shadow: 0 0 30px rgba(255, 0, 0, 0.2); }
-        .glitch { text-shadow: 3px 3px var(--red); }
-        
-        .section-padding { padding: 100px 10%; }
-        .gradient-line { height: 2px; background: linear-gradient(90deg, var(--red), transparent); width: 100px; margin-bottom: 20px; }
+        /* Video Masking Styling */
+        .video-mask {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%; /* Circle Mask */
+            overflow: hidden;
+            border: 4px solid #ff0000;
+            box-shadow: 0 0 50px rgba(255, 0, 0, 0.3);
+            margin: 0 auto;
+            position: relative;
+        }
+
+        #sharingan-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .gradient-text {
+            background: linear-gradient(to right, #ffffff, #ff0000);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            transition: 0.3s;
+        }
+
+        .glass-card:hover {
+            border-color: #ff0000;
+            background: rgba(255, 0, 0, 0.02);
+        }
+
+        /* Simple & Clean Navigation */
+        nav {
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(10px);
+        }
     </style>
 </head>
 <body>
 
-    <!-- Video Background -->
-    <div class="video-bg">
-        <video autoplay muted loop playsinline id="bg-video">
-            <source src="sharingan.mp4" type="video/mp4">
-        </video>
-    </div>
+    <nav>
+        <div class="text-2xl font-black tracking-tighter">AH<span class="text-red-600">.</span></div>
+        <a href="#contact" class="text-sm font-bold border border-white/20 px-5 py-2 rounded-full hover:bg-white hover:text-black transition">Let's Talk</a>
+    </nav>
 
-    <!-- 1. Hero Section -->
-    <section class="h-screen flex items-center justify-center relative px-6">
-        <div class="text-center">
-            <div class="mb-8 relative inline-block">
-                <img src="wasi.png" class="w-40 h-40 md:w-56 md:h-56 rounded-2xl border-2 border-red-600 rotate-3 red-shadow object-cover">
-                <div class="absolute -bottom-4 -right-4 bg-red-600 px-4 py-1 text-xs sync uppercase">Active</div>
-            </div>
-            <h1 class="sync text-5xl md:text-8xl glitch mb-4">AWAIS HAIDER</h1>
-            <p class="sync text-red-600 tracking-[10px] text-xs md:text-lg mb-8 uppercase">Full-Stack System Architect</p>
-            <div class="flex flex-wrap justify-center gap-4">
-                <a href="#work" class="px-8 py-3 bg-red-600 text-black font-black uppercase text-xs sync hover:bg-white transition-all">View Files</a>
-                <a href="#contact" class="px-8 py-3 border border-white text-white uppercase text-xs sync hover:bg-red-600 hover:border-red-600 transition-all">Initiate Protocol</a>
-            </div>
+    <!-- HERO SECTION -->
+    <section class="pt-32 pb-20 px-6 text-center">
+        <!-- Masked Video Top Par -->
+        <div class="video-mask mb-10">
+            <video autoplay muted loop playsinline id="sharingan-video">
+                <source src="sharingan.mp4" type="video/mp4">
+            </video>
         </div>
-    </section>
 
-    <!-- 2. Stats Section -->
-    <section class="section-padding grid grid-cols-2 md:grid-cols-4 gap-8">
-        <div class="glass p-8 text-center reveal">
-            <h2 class="text-4xl font-black text-red-600 mb-2">50+</h2>
-            <p class="sync text-[10px] opacity-60">Operations Completed</p>
-        </div>
-        <div class="glass p-8 text-center reveal">
-            <h2 class="text-4xl font-black text-red-600 mb-2">12+</h2>
-            <p class="sync text-[10px] opacity-60">Global Clients</p>
-        </div>
-        <div class="glass p-8 text-center reveal">
-            <h2 class="text-4xl font-black text-red-600 mb-2">100%</h2>
-            <p class="sync text-[10px] opacity-60">Success Rate</p>
-        </div>
-        <div class="glass p-8 text-center reveal">
-            <h2 class="text-4xl font-black text-red-600 mb-2">24/7</h2>
-            <p class="sync text-[10px] opacity-60">Active Support</p>
-        </div>
-    </section>
-
-    <!-- 3. About Section -->
-    <section class="section-padding grid md:grid-cols-2 gap-16 items-center">
-        <div class="reveal">
-            <div class="gradient-line"></div>
-            <h2 class="sync text-4xl mb-8">THE VISIONARY<br><span class="text-red-600">BEHIND THE CODE</span></h2>
-            <p class="text-gray-400 text-lg leading-relaxed mb-6">
-                Based in <span class="text-white font-bold">Chakral, Chakwal</span>, I don't just build websites; I create digital experiences that dominate the web. My approach is simple: Precision, Performance, and Power.
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-6xl md:text-8xl font-black mb-4 tracking-tighter reveal">
+                AWAIS <span class="gradient-text">HAIDER</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-400 mb-8 reveal">
+                Building the future of web with <span class="text-white border-b-2 border-red-600">Code & Logic</span>
             </p>
-            <p class="text-gray-400 text-lg leading-relaxed">
-                With expertise in modern JavaScript frameworks, I solve complex problems through clean and efficient architecture.
+            <img src="wasi.png" alt="Awais" class="w-24 h-24 mx-auto rounded-2xl border-2 border-red-600 mb-6 rotate-3 shadow-xl">
+        </div>
+    </section>
+
+    <!-- INFO SECTION -->
+    <section class="py-20 px-6 max-w-5xl mx-auto grid md:grid-cols-2 gap-10">
+        <div class="glass-card p-10 rounded-3xl reveal">
+            <h2 class="text-3xl font-bold mb-6 text-red-600">Expertise</h2>
+            <div class="space-y-4">
+                <div class="flex justify-between items-center border-b border-white/10 pb-2">
+                    <span class="text-lg">Frontend (React/Next)</span>
+                    <i class="fab fa-react text-blue-400"></i>
+                </div>
+                <div class="flex justify-between items-center border-b border-white/10 pb-2">
+                    <span class="text-lg">Backend (Node.js)</span>
+                    <i class="fab fa-node-js text-green-500"></i>
+                </div>
+                <div class="flex justify-between items-center border-b border-white/10 pb-2">
+                    <span class="text-lg">Modern Styling (Tailwind)</span>
+                    <i class="fab fa-css3 text-blue-500"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="glass-card p-10 rounded-3xl reveal">
+            <h2 class="text-3xl font-bold mb-6 text-red-600">Bio</h2>
+            <p class="text-gray-300 leading-relaxed">
+                I am a passionate developer based in <b>Chakral, Chakwal</b>. I specialize in creating high-quality, high-performance websites that don't just look good but work perfectly. 
             </p>
-        </div>
-        <div class="glass p-2 reveal h-full">
-            <div class="bg-black/50 p-8 h-full border border-white/5">
-                <h4 class="sync text-red-600 mb-4">Capabilities</h4>
-                <ul class="space-y-4">
-                    <li class="flex justify-between border-b border-white/10 pb-2"><span>Web Engineering</span> <span class="text-red-600 font-bold">99%</span></li>
-                    <li class="flex justify-between border-b border-white/10 pb-2"><span>UI/UX Interface</span> <span class="text-red-600 font-bold">95%</span></li>
-                    <li class="flex justify-between border-b border-white/10 pb-2"><span>Database Logic</span> <span class="text-red-600 font-bold">90%</span></li>
-                    <li class="flex justify-between border-b border-white/10 pb-2"><span>System Security</span> <span class="text-red-600 font-bold">88%</span></li>
-                </ul>
+            <div class="mt-6 flex items-center gap-3">
+                <div class="w-3 h-3 bg-red-600 rounded-full animate-pulse"></div>
+                <span class="text-sm uppercase tracking-widest text-gray-400">Available for Projects</span>
             </div>
         </div>
     </section>
 
-    <!-- 4. Services Section -->
-    <section class="section-padding">
-        <h2 class="sync text-3xl mb-12 text-center">CORE <span class="text-red-600">SERVICES</span></h2>
-        <div class="grid md:grid-cols-3 gap-6">
-            <div class="glass p-10 hover:border-red-600 transition-all reveal">
-                <i class="fas fa-rocket text-4xl text-red-600 mb-6"></i>
-                <h3 class="sync text-lg mb-4">Fast Performance</h3>
-                <p class="text-gray-500">Websites that load faster than the blink of a Sharingan.</p>
+    <!-- CONTACT SECTION (Clean & Big) -->
+    <section id="contact" class="py-20 px-6 text-center">
+        <div class="max-w-3xl mx-auto glass-card p-12 rounded-[40px] border-2 border-red-600/20">
+            <h2 class="text-4xl md:text-6xl font-bold mb-8">Ready to <span class="text-red-600">Sync?</span></h2>
+            
+            <div class="space-y-6 text-xl md:text-2xl font-bold">
+                <p class="hover:text-red-600 transition tracking-tight">
+                    <i class="fas fa-envelope mr-3 text-red-600"></i> wasicenter120@gmail.com
+                </p>
+                <p class="hover:text-red-600 transition tracking-tight">
+                    <i class="fas fa-phone mr-3 text-red-600"></i> 03342002756
+                </p>
+                <p class="text-gray-500 text-lg">
+                    <i class="fas fa-map-marker-alt mr-3 text-red-600"></i> Chakral, Chakwal, Pakistan
+                </p>
             </div>
-            <div class="glass p-10 hover:border-red-600 transition-all reveal">
-                <i class="fas fa-shield-alt text-4xl text-red-600 mb-6"></i>
-                <h3 class="sync text-lg mb-4">Secure Systems</h3>
-                <p class="text-gray-500">Top-tier security protocols to keep your data invisible to threats.</p>
-            </div>
-            <div class="glass p-10 hover:border-red-600 transition-all reveal">
-                <i class="fas fa-mobile-alt text-4xl text-red-600 mb-6"></i>
-                <h3 class="sync text-lg mb-4">Responsive Flow</h3>
-                <p class="text-gray-500">Perfectly adapted to every screen size in the multiverse.</p>
+
+            <div class="mt-12">
+                <a href="https://wa.me/923342002756" class="bg-red-600 text-black px-12 py-5 rounded-full font-black uppercase tracking-tighter hover:scale-105 transition active:scale-95">
+                    Start a Conversation
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- 5. Timeline Section -->
-    <section class="section-padding bg-white/5">
-        <h2 class="sync text-3xl mb-16 text-center">MISSION <span class="text-red-600">LOGS</span></h2>
-        <div class="max-w-4xl mx-auto space-y-12">
-            <div class="flex gap-8 reveal">
-                <div class="sync text-red-600">2024</div>
-                <div class="border-l-2 border-red-600 pl-8">
-                    <h3 class="text-xl font-bold">Elite Developer at Wasi Center</h3>
-                    <p class="text-gray-500 mt-2">Leading full-stack projects for international clients.</p>
-                </div>
-            </div>
-            <div class="flex gap-8 reveal">
-                <div class="sync text-red-600">2022</div>
-                <div class="border-l-2 border-red-600 pl-8">
-                    <h3 class="text-xl font-bold">UI/UX Designer</h3>
-                    <p class="text-gray-500 mt-2">Specializing in high-fidelity prototypes and glassmorphism.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 6. Contact Section -->
-    <section id="contact" class="section-padding">
-        <div class="glass p-10 md:p-20 text-center relative overflow-hidden">
-            <h2 class="sync text-4xl md:text-7xl mb-10">READY TO <span class="text-red-600">SYNC?</span></h2>
-            <div class="grid md:grid-cols-3 gap-10 mb-16">
-                <div>
-                    <i class="fas fa-envelope text-red-600 mb-4"></i>
-                    <p class="opacity-50 text-xs sync mb-2">Email</p>
-                    <p class="font-bold">wasicenter120@gmail.com</p>
-                </div>
-                <div>
-                    <i class="fas fa-phone text-red-600 mb-4"></i>
-                    <p class="opacity-50 text-xs sync mb-2">Phone</p>
-                    <p class="font-bold">03342002756</p>
-                </div>
-                <div>
-                    <i class="fas fa-map-marker-alt text-red-600 mb-4"></i>
-                    <p class="opacity-50 text-xs sync mb-2">Base</p>
-                    <p class="font-bold">Chakwal, Pakistan</p>
-                </div>
-            </div>
-            <a href="https://wa.me/923342002756" class="inline-block px-12 py-5 bg-red-600 text-black font-black uppercase sync text-sm hover:scale-110 transition-all">Start Project</a>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="py-10 text-center border-t border-white/5">
-        <p class="sync text-[10px] opacity-40">AWAIS HAIDER // 2024 // ALL RIGHTS RESERVED</p>
+    <footer class="py-10 text-center opacity-40 text-xs tracking-widest uppercase">
+        &copy; 2024 Awais Haider — System Architect
     </footer>
 
     <script>
-        // Smooth Scroll Initialization
-        const lenis = new Lenis();
-        function raf(time) {
-            lenis.raf(time);
-            requestAnimationFrame(raf);
-        }
-        requestAnimationFrame(raf);
-
-        // GSAP Animations
-        gsap.registerPlugin(ScrollTrigger);
-
-        document.querySelectorAll('.reveal').forEach((el) => {
-            gsap.from(el, {
-                scrollTrigger: {
-                    trigger: el,
-                    start: "top 90%",
-                    toggleActions: "play none none none"
-                },
-                y: 60,
+        // GSAP Animations on Load
+        window.onload = () => {
+            gsap.from(".reveal", {
+                y: 50,
                 opacity: 0,
-                duration: 1.2,
+                duration: 1,
+                stagger: 0.2,
                 ease: "power4.out"
             });
-        });
 
-        // Hero Reveal
-        gsap.from(".hero-title", { opacity: 0, scale: 0.9, duration: 2, ease: "expo.out" });
+            // Smooth appear for video mask
+            gsap.from(".video-mask", {
+                scale: 0.5,
+                opacity: 0,
+                duration: 1.5,
+                ease: "expo.out"
+            });
+        };
     </script>
 </body>
 </html>
