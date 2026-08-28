@@ -4,181 +4,274 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- SEO Meta Tags -->
-    <title>Awais Haider | Professional Full-Stack Developer & Architect</title>
-    <meta name="description" content="Awais Haider is an elite Full-Stack Architect and Creative Developer based in Chakwal, Pakistan. Specializing in React, Next.js, and high-performance digital solutions.">
-    <meta name="keywords" content="Awais Haider, Developer in Chakwal, Full Stack Developer Pakistan, Web Architect, React Developer, Software Engineer">
+    <!-- Professional SEO & Brand Protection -->
+    <title>Awais Haider | Elite Full-Stack Architect</title>
+    <meta name="description" content="Awais Haider is a professional Full-Stack Software Architect based in Chakwal. Specializing in high-performance web applications, React, Node.js, and premium UI/UX design.">
     <meta name="author" content="Awais Haider">
     <link rel="canonical" href="https://awaishaider.zone.id/" />
 
-    <!-- Open Graph (Facebook/Social Media) -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://awaishaider.zone.id/">
-    <meta property="og:title" content="Awais Haider | Full-Stack Architect">
-    <meta property="og:description" content="Turning complex problems into elegant digital solutions. Expert in React, Node.js, and UI/UX.">
-    <meta property="og:image" content="https://awaishaider.zone.id/wasi.png">
-    <meta property="og:site_name" content="Awais Haider">
-
-    <!-- JSON-LD Schema (Zone.ID Hatane aur Google Site Name ke liye) -->
+    <!-- Google Site Name Fix (Combating Zone.ID) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "WebSite",
+      "@type": "Person",
       "name": "Awais Haider",
-      "alternateName": "Awais Haider Developer",
-      "url": "https://awaishaider.zone.id/"
+      "jobTitle": "Full-Stack Architect & CEO",
+      "url": "https://awaishaider.zone.id/",
+      "sameAs": [
+        "https://linkedin.com/in/yourprofile",
+        "https://wa.me/923342002756"
+      ]
     }
     </script>
 
-    <!-- Favicon -->
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
-    
-    <!-- Google Fonts & Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
     <style>
-        body { background-color: #050505; color: #ffffff; font-family: 'Plus Jakarta Sans', sans-serif; overflow-x: hidden; }
-        .mask-container { width: 280px; height: 280px; clip-path: circle(50% at 50% 50%); border: 3px solid #ff0000; margin: 0 auto; position: relative; box-shadow: 0 0 40px rgba(255, 0, 0, 0.4); }
-        #hero-video { width: 100%; height: 100%; object-fit: cover; }
-        .glass { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 24px; }
-        .red-gradient { background: linear-gradient(135deg, #ff0000, #990000); }
-        .text-reveal { opacity: 0; transform: translateY(30px); }
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-thumb { background: #ff0000; border-radius: 10px; }
-        
-        /* New Profile Tag Style */
-        .profile-tag {
-            position: absolute;
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #ff0000;
-            padding: 5px 15px;
-            border-radius: 8px;
-            font-size: 12px;
-            font-weight: 800;
-            text-transform: uppercase;
-            white-space: nowrap;
-            box-shadow: 0 5px 15px rgba(255,0,0,0.4);
+        :root {
+            --neon-red: #ff0000;
+            --neon-blue: #00f2ff;
+            --neon-purple: #bc13fe;
         }
+
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        /* Neon Rotating Border Animation */
+        .neon-profile-wrapper {
+            position: relative;
+            width: 320px;
+            height: 320px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            overflow: visible;
+        }
+
+        .neon-border {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: conic-gradient(from 0deg, var(--neon-red), var(--neon-purple), var(--neon-blue), var(--neon-red));
+            animation: rotateNeon 4s linear infinite;
+            filter: blur(8px);
+            z-index: 1;
+        }
+
+        @keyframes rotateNeon {
+            0% { transform: rotate(0deg); filter: hue-rotate(0deg); }
+            100% { transform: rotate(360deg); filter: hue-rotate(360deg); }
+        }
+
+        .inner-pic {
+            position: relative;
+            width: 305px;
+            height: 305px;
+            border-radius: 50%;
+            background: #000;
+            z-index: 2;
+            padding: 5px;
+            overflow: hidden;
+        }
+
+        .inner-pic img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        /* Floating Name Box */
+        .ceo-badge {
+            position: absolute;
+            bottom: -10px;
+            background: white;
+            color: black;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 14px;
+            text-transform: uppercase;
+            box-shadow: 0 10px 30px rgba(255,255,255,0.3);
+            z-index: 10;
+        }
+
+        /* Video Section Masking */
+        .video-container {
+            width: 350px;
+            height: 350px;
+            clip-path: circle(50% at 50% 50%);
+            border: 2px solid rgba(255,255,255,0.1);
+            position: relative;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s ease;
+        }
+
+        .glass-card:hover {
+            border-color: var(--neon-red);
+            box-shadow: 0 0 30px rgba(255, 0, 0, 0.2);
+            transform: translateY(-10px);
+        }
+
+        .reveal { opacity: 0; transform: translateY(40px); }
     </style>
 </head>
 <body>
 
+    <!-- NAVBAR -->
+    <nav class="fixed top-0 w-full z-50 px-10 py-6 flex justify-between items-center glass-card border-none rounded-none">
+        <div class="text-2xl font-black tracking-tighter">AWAIS <span class="text-red-600">HAIDER.</span></div>
+        <div class="hidden md:flex gap-8 font-semibold text-sm uppercase tracking-widest text-gray-400">
+            <a href="#about" class="hover:text-white transition">About</a>
+            <a href="#services" class="hover:text-white transition">Expertise</a>
+            <a href="#contact" class="hover:text-white transition">Hire Me</a>
+        </div>
+    </nav>
+
     <!-- HERO SECTION -->
-    <section class="min-h-screen flex flex-col justify-center items-center text-center px-6 pt-20">
-        <div class="mask-container mb-8">
-            <video autoplay muted loop playsinline id="hero-video">
+    <section class="min-h-screen flex flex-col justify-center items-center text-center px-6 relative pt-32">
+        <div class="video-container mb-12 shadow-[0_0_100px_rgba(255,0,0,0.2)]">
+            <video autoplay muted loop playsinline id="hero-video" class="w-full h-full object-cover">
                 <source src="sharingan.mp4" type="video/mp4">
             </video>
         </div>
         
-        <h1 class="text-5xl md:text-8xl font-extrabold tracking-tighter mb-4 text-reveal">
-            AWAIS <span class="text-red-600">HAIDER</span>
+        <h1 class="text-6xl md:text-9xl font-black tracking-tightest leading-none mb-6 reveal">
+            FULL-STACK <br> <span class="text-red-600">ARCHITECT</span>
         </h1>
-        <p class="text-gray-400 text-lg md:text-xl max-w-2xl text-reveal">
-            Creative Developer & Software Architect based in <span class="text-white border-b border-red-600">Chakwal, Pakistan</span>. I turn complex problems into elegant digital solutions.
+        <p class="text-gray-500 text-xl max-w-3xl reveal italic">
+            "Engineering high-end digital experiences for the next generation of the web."
         </p>
-
-        <div class="mt-10 flex gap-4 text-reveal">
-            <a href="#projects" class="red-gradient px-8 py-3 rounded-full font-bold hover:scale-105 transition">View My Work</a>
-            <a href="#contact" class="border border-white/20 px-8 py-3 rounded-full font-bold hover:bg-white hover:text-black transition">Let's Talk</a>
-        </div>
     </section>
 
-    <!-- ABOUT & DP SECTION (Optimized with Profile Box) -->
-    <section class="py-24 px-6 max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-        <div class="text-reveal relative inline-block mx-auto">
-            <!-- Yahan apni pic lagayein -->
-            <img src="wasi.png" alt="Awais Haider CEO" class="w-full max-w-md rounded-[40px] border-2 border-red-600/30 rotate-2 shadow-2xl">
-            <!-- Name Box -->
-            <div class="profile-tag">
-                Awais Haider • CEO / Co-Founder
+    <!-- ABOUT SECTION WITH NEON DP -->
+    <section id="about" class="py-32 px-6 max-w-7xl mx-auto grid md:grid-cols-2 gap-20 items-center">
+        <div class="reveal flex justify-center">
+            <div class="neon-profile-wrapper">
+                <div class="neon-border"></div>
+                <div class="inner-pic">
+                    <img src="wasi.png" alt="Awais Haider">
+                </div>
+                <div class="ceo-badge">
+                    Awais Haider • CEO / CO-FOUNDER
+                </div>
             </div>
         </div>
-        <div class="text-reveal">
-            <h2 class="text-4xl font-bold mb-6 italic">"Precision in every pixel, <br>Power in every line of code."</h2>
-            <p class="text-gray-400 text-lg leading-relaxed mb-6">
-                Assalam-o-Alaikum! I am Awais, a developer who believes in the power of innovation. Whether it's a small landing page or a complex web application, I bring 100% commitment to the table.
+        <div class="reveal">
+            <h2 class="text-4xl md:text-6xl font-bold mb-8 leading-tight">Mastering the <span class="text-red-600 underline">Logic</span>, Crafting the <span class="text-red-600 underline">Visuals</span>.</h2>
+            <p class="text-gray-400 text-xl leading-relaxed mb-10">
+                I am a Software Architect from Chakwal, specializing in turning complex business problems into scalable code. With 3+ years of deep-dive experience in the JavaScript ecosystem, I build applications that don't just work—they excel.
             </p>
-            <div class="grid grid-cols-2 gap-6">
-                <div>
-                    <h4 class="text-red-600 font-bold uppercase text-xs tracking-widest mb-2">Location</h4>
-                    <p>Chakral, Chakwal</p>
-                </div>
-                <div>
-                    <h4 class="text-red-600 font-bold uppercase text-xs tracking-widest mb-2">Experience</h4>
-                    <p>3+ Years Coding</p>
-                </div>
+            <div class="flex gap-12 border-t border-white/10 pt-10">
+                <div><span class="block text-3xl font-bold">3+</span><span class="text-gray-600 text-xs uppercase font-black">Years Experience</span></div>
+                <div><span class="block text-3xl font-bold">50+</span><span class="text-gray-600 text-xs uppercase font-black">Projects Delivered</span></div>
+                <div><span class="block text-3xl font-bold">100%</span><span class="text-gray-600 text-xs uppercase font-black">Client Satisfaction</span></div>
             </div>
         </div>
     </section>
 
-    <!-- ... (Baqi Services, Skills, Contact sections same rahen gay) ... -->
-
-    <!-- SERVICES SECTION -->
-    <section class="py-24 px-6 bg-[#080808]">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-4xl font-bold mb-16 text-center text-reveal">SPECIALIZED <span class="text-red-600">SERVICES</span></h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="glass p-10 text-reveal hover:border-red-600 transition">
-                    <i class="fas fa-laptop-code text-red-600 text-4xl mb-6"></i>
-                    <h3 class="text-2xl font-bold mb-4">Web Development</h3>
-                    <p class="text-gray-400">High-end React, Next.js, and Tailwind CSS websites that are fast and secure.</p>
+    <!-- SERVICES (BENTO STYLE) -->
+    <section id="services" class="py-32 px-6">
+        <div class="max-w-7xl mx-auto">
+            <h3 class="text-gray-600 font-black text-sm tracking-[10px] mb-4 text-center">EXPERTISE</h3>
+            <h2 class="text-5xl font-bold text-center mb-20 reveal uppercase">Specialized <span class="text-red-600">Services</span></h2>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Large Box -->
+                <div class="glass-card p-12 md:col-span-2 reveal">
+                    <i class="fas fa-code text-red-600 text-5xl mb-8"></i>
+                    <h4 class="text-3xl font-bold mb-4">Enterprise Web Solutions</h4>
+                    <p class="text-gray-400 text-lg">Building full-scale web ecosystems using React, Next.js, and specialized backend logic. From complex dashboards to fast e-commerce engines.</p>
                 </div>
-                <div class="glass p-10 text-reveal hover:border-red-600 transition">
-                    <i class="fas fa-mobile-screen text-red-600 text-4xl mb-6"></i>
-                    <h3 class="text-2xl font-bold mb-4">App Design</h3>
-                    <p class="text-gray-400">User-centric mobile app designs that provide a seamless experience.</p>
+                <!-- Small Box -->
+                <div class="glass-card p-12 reveal">
+                    <i class="fas fa-layer-group text-red-600 text-5xl mb-8"></i>
+                    <h4 class="text-2xl font-bold mb-4">UI/UX Architecture</h4>
+                    <p class="text-gray-400">Design systems that prioritize user psychology and conversion optimization.</p>
                 </div>
-                <div class="glass p-10 text-reveal hover:border-red-600 transition">
-                    <i class="fas fa-server text-red-600 text-4xl mb-6"></i>
-                    <h3 class="text-2xl font-bold mb-4">Backend Logic</h3>
-                    <p class="text-gray-400">Robust Node.js and MongoDB database management for your data security.</p>
+                <!-- Small Box -->
+                <div class="glass-card p-12 reveal">
+                    <i class="fas fa-bolt text-red-600 text-5xl mb-8"></i>
+                    <h4 class="text-2xl font-bold mb-4">Performance SEO</h4>
+                    <p class="text-gray-400">Technical SEO that ensures your site ranks high and loads in under 1s.</p>
+                </div>
+                <!-- Large Box -->
+                <div class="glass-card p-12 md:col-span-2 reveal">
+                    <i class="fas fa-database text-red-600 text-5xl mb-8"></i>
+                    <h4 class="text-3xl font-bold mb-4">Scalable Backend Logic</h4>
+                    <p class="text-gray-400">Expertise in Node.js, MongoDB, and Cloud infrastructure to ensure your data stays secure and accessible worldwide.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- CONTACT SECTION -->
-    <section id="contact" class="py-24 px-6">
-        <div class="max-w-4xl mx-auto glass p-12 md:p-20 text-center border-t-4 border-red-600 text-reveal">
-            <h2 class="text-5xl font-bold mb-10">WORK WITH <span class="text-red-600">ME</span></h2>
-            <div class="grid md:grid-cols-2 gap-10 text-left mb-12">
-                <div class="space-y-6">
-                    <div>
-                        <h4 class="text-red-600 font-bold uppercase text-xs tracking-widest">Email</h4>
-                        <p class="text-xl md:text-2xl font-bold">wasicenter120@gmail.com</p>
-                    </div>
-                </div>
-                <div class="space-y-6">
-                    <div>
-                        <h4 class="text-red-600 font-bold uppercase text-xs tracking-widest">Phone</h4>
-                        <p class="text-xl md:text-2xl font-bold">03342002756</p>
-                    </div>
-                </div>
+    <section id="contact" class="py-32 px-6">
+        <div class="max-w-4xl mx-auto text-center reveal">
+            <div class="inline-block bg-red-600 px-6 py-2 rounded-full font-black text-xs tracking-widest mb-10 uppercase">Available for Hire</div>
+            <h2 class="text-6xl md:text-8xl font-black mb-12 uppercase tracking-tighter">Let's <span class="text-red-600">Sync</span> Up.</h2>
+            
+            <div class="flex flex-col md:flex-row justify-center gap-10 mb-20">
+                <a href="mailto:wasicenter120@gmail.com" class="text-2xl font-bold hover:text-red-600 transition">wasicenter120@gmail.com</a>
+                <a href="tel:+923342002756" class="text-2xl font-bold hover:text-red-600 transition">0334 2002756</a>
             </div>
-            <a href="mailto:wasicenter120@gmail.com" class="inline-block red-gradient px-12 py-5 rounded-2xl font-black uppercase text-sm tracking-widest hover:scale-105 transition active:scale-95">
-                Kickstart Project
-            </a>
+
+            <div class="flex justify-center gap-6">
+                <a href="https://wa.me/923342002756" class="w-20 h-20 glass-card flex items-center justify-center rounded-full text-3xl hover:bg-white hover:text-black transition"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" class="w-20 h-20 glass-card flex items-center justify-center rounded-full text-3xl hover:bg-white hover:text-black transition"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="w-20 h-20 glass-card flex items-center justify-center rounded-full text-3xl hover:bg-white hover:text-black transition"><i class="fab fa-github"></i></a>
+            </div>
         </div>
     </section>
 
-    <footer class="py-10 text-center text-gray-600 text-xs tracking-[5px] uppercase">
-        Awais Haider &copy; 2024 • Built with Code & Passion
+    <footer class="py-20 text-center border-t border-white/5">
+        <div class="text-gray-600 text-xs tracking-[10px] font-bold uppercase mb-4">Awais Haider &copy; 2024</div>
+        <p class="text-[10px] text-gray-800 tracking-[5px] uppercase italic">Designed for Impact • Developed for Scale</p>
     </footer>
 
     <script>
         gsap.registerPlugin(ScrollTrigger);
-        document.querySelectorAll('.text-reveal').forEach((el) => {
+
+        // GSAP Reveal Animation
+        document.querySelectorAll('.reveal').forEach((el) => {
             gsap.to(el, {
-                scrollTrigger: { trigger: el, start: "top 85%" },
-                opacity: 1, y: 0, duration: 1, ease: "power4.out"
+                scrollTrigger: {
+                    trigger: el,
+                    start: "top 90%",
+                },
+                opacity: 1,
+                y: 0,
+                duration: 1.2,
+                ease: "expo.out"
             });
+        });
+
+        // Navbar Blur on Scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.style.background = "rgba(0,0,0,0.8)";
+                nav.style.backdropFilter = "blur(10px)";
+            } else {
+                nav.style.background = "transparent";
+                nav.style.backdropFilter = "none";
+            }
         });
     </script>
 </body>
