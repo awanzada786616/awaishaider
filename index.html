@@ -3,7 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Awais Haider | Full-Stack Architect</title>
+    
+    <!-- SEO Meta Tags -->
+    <title>Awais Haider | Professional Full-Stack Developer & Architect</title>
+    <meta name="description" content="Awais Haider is an elite Full-Stack Architect and Creative Developer based in Chakwal, Pakistan. Specializing in React, Next.js, and high-performance digital solutions.">
+    <meta name="keywords" content="Awais Haider, Developer in Chakwal, Full Stack Developer Pakistan, Web Architect, React Developer, Software Engineer">
+    <meta name="author" content="Awais Haider">
+    <link rel="canonical" href="https://awaishaider.zone.id/" />
+
+    <!-- Open Graph (Facebook/Social Media) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://awaishaider.zone.id/">
+    <meta property="og:title" content="Awais Haider | Full-Stack Architect">
+    <meta property="og:description" content="Turning complex problems into elegant digital solutions. Expert in React, Node.js, and UI/UX.">
+    <meta property="og:image" content="https://awaishaider.zone.id/wasi.png">
+    <meta property="og:site_name" content="Awais Haider">
+
+    <!-- JSON-LD Schema (Zone.ID Hatane aur Google Site Name ke liye) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Awais Haider",
+      "alternateName": "Awais Haider Developer",
+      "url": "https://awaishaider.zone.id/"
+    }
+    </script>
+
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
     
     <!-- Google Fonts & Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;700;800&display=swap" rel="stylesheet">
@@ -13,46 +41,30 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
     <style>
-        body {
-            background-color: #050505;
-            color: #ffffff;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            overflow-x: hidden;
-        }
-
-        /* Video Masking (Top) */
-        .mask-container {
-            width: 280px;
-            height: 280px;
-            clip-path: circle(50% at 50% 50%);
-            border: 3px solid #ff0000;
-            margin: 0 auto;
-            position: relative;
-            box-shadow: 0 0 40px rgba(255, 0, 0, 0.4);
-        }
-
-        #hero-video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .glass {
-            background: rgba(255, 255, 255, 0.02);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 24px;
-        }
-
-        .red-gradient {
-            background: linear-gradient(135deg, #ff0000, #990000);
-        }
-
+        body { background-color: #050505; color: #ffffff; font-family: 'Plus Jakarta Sans', sans-serif; overflow-x: hidden; }
+        .mask-container { width: 280px; height: 280px; clip-path: circle(50% at 50% 50%); border: 3px solid #ff0000; margin: 0 auto; position: relative; box-shadow: 0 0 40px rgba(255, 0, 0, 0.4); }
+        #hero-video { width: 100%; height: 100%; object-fit: cover; }
+        .glass { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 24px; }
+        .red-gradient { background: linear-gradient(135deg, #ff0000, #990000); }
         .text-reveal { opacity: 0; transform: translateY(30px); }
-
-        /* Custom Scrollbar */
         ::-webkit-scrollbar { width: 6px; }
         ::-webkit-scrollbar-thumb { background: #ff0000; border-radius: 10px; }
+        
+        /* New Profile Tag Style */
+        .profile-tag {
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #ff0000;
+            padding: 5px 15px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 800;
+            text-transform: uppercase;
+            white-space: nowrap;
+            box-shadow: 0 5px 15px rgba(255,0,0,0.4);
+        }
     </style>
 </head>
 <body>
@@ -78,10 +90,15 @@
         </div>
     </section>
 
-    <!-- ABOUT & DP SECTION -->
+    <!-- ABOUT & DP SECTION (Optimized with Profile Box) -->
     <section class="py-24 px-6 max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-        <div class="text-reveal">
-            <img src="wasi.png" class="w-full max-w-md rounded-[40px] border-2 border-red-600/30 rotate-2 shadow-2xl">
+        <div class="text-reveal relative inline-block mx-auto">
+            <!-- Yahan apni pic lagayein -->
+            <img src="wasi.png" alt="Awais Haider CEO" class="w-full max-w-md rounded-[40px] border-2 border-red-600/30 rotate-2 shadow-2xl">
+            <!-- Name Box -->
+            <div class="profile-tag">
+                Awais Haider • CEO / Co-Founder
+            </div>
         </div>
         <div class="text-reveal">
             <h2 class="text-4xl font-bold mb-6 italic">"Precision in every pixel, <br>Power in every line of code."</h2>
@@ -100,6 +117,8 @@
             </div>
         </div>
     </section>
+
+    <!-- ... (Baqi Services, Skills, Contact sections same rahen gay) ... -->
 
     <!-- SERVICES SECTION -->
     <section class="py-24 px-6 bg-[#080808]">
@@ -125,50 +144,25 @@
         </div>
     </section>
 
-    <!-- SKILLS SECTION (Bento Style) -->
-    <section class="py-24 px-6 max-w-6xl mx-auto">
-        <h2 class="text-4xl font-bold mb-16 text-reveal">TECH <span class="text-red-600">STACK</span></h2>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-reveal">
-            <div class="glass p-6 flex items-center gap-4"><i class="fab fa-html5 text-orange-500 text-2xl"></i> HTML5</div>
-            <div class="glass p-6 flex items-center gap-4"><i class="fab fa-css3-alt text-blue-500 text-2xl"></i> CSS3</div>
-            <div class="glass p-6 flex items-center gap-4"><i class="fab fa-js text-yellow-400 text-2xl"></i> JavaScript</div>
-            <div class="glass p-6 flex items-center gap-4"><i class="fab fa-react text-blue-300 text-2xl"></i> React.js</div>
-            <div class="glass p-6 flex items-center gap-4"><i class="fab fa-node text-green-500 text-2xl"></i> Node.js</div>
-            <div class="glass p-6 flex items-center gap-4"><i class="fas fa-wind text-cyan-400 text-2xl"></i> Tailwind</div>
-            <div class="glass p-6 flex items-center gap-4"><i class="fab fa-git-alt text-red-500 text-2xl"></i> Git</div>
-            <div class="glass p-6 flex items-center gap-4"><i class="fas fa-database text-green-400 text-2xl"></i> MongoDB</div>
-        </div>
-    </section>
-
     <!-- CONTACT SECTION -->
     <section id="contact" class="py-24 px-6">
         <div class="max-w-4xl mx-auto glass p-12 md:p-20 text-center border-t-4 border-red-600 text-reveal">
             <h2 class="text-5xl font-bold mb-10">WORK WITH <span class="text-red-600">ME</span></h2>
-            
             <div class="grid md:grid-cols-2 gap-10 text-left mb-12">
                 <div class="space-y-6">
                     <div>
                         <h4 class="text-red-600 font-bold uppercase text-xs tracking-widest">Email</h4>
                         <p class="text-xl md:text-2xl font-bold">wasicenter120@gmail.com</p>
                     </div>
+                </div>
+                <div class="space-y-6">
                     <div>
                         <h4 class="text-red-600 font-bold uppercase text-xs tracking-widest">Phone</h4>
                         <p class="text-xl md:text-2xl font-bold">03342002756</p>
                     </div>
                 </div>
-                <div class="space-y-6">
-                    <div>
-                        <h4 class="text-red-600 font-bold uppercase text-xs tracking-widest">Address</h4>
-                        <p class="text-xl md:text-2xl font-bold">Chakral, Chakwal, Pakistan</p>
-                    </div>
-                    <div class="flex gap-4">
-                        <a href="https://wa.me/923342002756" class="w-12 h-12 glass flex items-center justify-center rounded-full text-green-500 text-xl hover:bg-green-500 hover:text-black transition"><i class="fab fa-whatsapp"></i></a>
-                        <a href="#" class="w-12 h-12 glass flex items-center justify-center rounded-full text-blue-400 text-xl hover:bg-blue-400 hover:text-black transition"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
             </div>
-
-            <a href="mailto:wasicenter120@gmail.com" class="inline-block red-gradient px-12 py-5 rounded-2xl font-black uppercase text-sm tracking-widest hover:scale-105 transition active:scale-95 shadow-[0_10px_40px_rgba(255,0,0,0.3)]">
+            <a href="mailto:wasicenter120@gmail.com" class="inline-block red-gradient px-12 py-5 rounded-2xl font-black uppercase text-sm tracking-widest hover:scale-105 transition active:scale-95">
                 Kickstart Project
             </a>
         </div>
@@ -179,19 +173,11 @@
     </footer>
 
     <script>
-        // GSAP Scroll Animations
         gsap.registerPlugin(ScrollTrigger);
-
         document.querySelectorAll('.text-reveal').forEach((el) => {
             gsap.to(el, {
-                scrollTrigger: {
-                    trigger: el,
-                    start: "top 85%",
-                },
-                opacity: 1,
-                y: 0,
-                duration: 1,
-                ease: "power4.out"
+                scrollTrigger: { trigger: el, start: "top 85%" },
+                opacity: 1, y: 0, duration: 1, ease: "power4.out"
             });
         });
     </script>
